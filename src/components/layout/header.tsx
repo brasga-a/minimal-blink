@@ -16,44 +16,7 @@ import { IconBrandGithub } from '@tabler/icons-react';
 import Image from "next/image";
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-]
+import { ThemeToggle } from '../theme-toggle';
 
 export default function Header() {
 
@@ -125,55 +88,42 @@ function NavigationMenuBar() {
       <NavigationMenuList className="flex-wrap">
         <NavigationMenuItem>
           <NavigationMenuLink  className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Docs</Link>
+            <Link href="/#">Studio</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:block">
-          <NavigationMenuTrigger>List</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Games</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[300px] gap-4">
+            <ul className="grid w-[200px] gap-4">
               <li>
-                <NavigationMenuLink>
-                  <Link href="#">
-                    <div className="font-medium">Components</div>
-                    <div className="text-muted-foreground">
-                      Browse all components in the library.
-                    </div>
-                  </Link>
+                <NavigationMenuLink >
+                  <Link href="#">Game 1</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink >
-                  <Link href="#">
-                    <div className="font-medium">Documentation</div>
-                    <div className="text-muted-foreground">
-                      Learn how to use the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink >
-                  <Link href="#">
-                    <div className="font-medium">Blog</div>
-                    <div className="text-muted-foreground">
-                      Read our latest blog posts.
-                    </div>
-                  </Link>
+                  <Link href="#">Game 2</Link>
                 </NavigationMenuLink>
               </li>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink  className={navigationMenuTriggerStyle()}>
+            <Link href="#">Forum</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:block">
-          <NavigationMenuTrigger>Simple</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Careers</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink >
-                  <Link href="#">Components</Link>
+                  <Link href="#">Current Vacancies</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink >
-                  <Link href="#">Documentation</Link>
+                  <Link href="#">Graduates</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink >
-                  <Link href="#">Blocks</Link>
+                  <Link href="#">Interns</Link>
                 </NavigationMenuLink>
               </li>
             </ul>
@@ -186,10 +136,11 @@ function NavigationMenuBar() {
 
 function SocialIcons() {
   return (
-    <div>
-      <Link href={'#'}>
-        <IconBrandGithub className='border rounded-md p-2 hover:bg-accent' size={36}/>
+    <div className='flex gap-2'>
+      <Link href={'https://github.com/brasga-a/minimal-blink'}>
+        <IconBrandGithub className="border rounded-md p-2 hover:bg-muted hover:text-foreground dark:hover:bg-muted/50 aria-expanded:bg-muted aria-expanded:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-md bg-clip-padding text-sm font-medium focus-visible:ring-[3px] aria-invalid:ring-[3px] [&_svg:not([class*='size-'])]:size-4 inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none group/button select-none" size={36}/>
       </Link>
+      <ThemeToggle/>
     </div>
   )
 }
