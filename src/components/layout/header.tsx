@@ -87,8 +87,8 @@ function NavigationMenuBar() {
     <NavigationMenu>
       <NavigationMenuList className="flex-wrap">
         <NavigationMenuItem>
-          <NavigationMenuLink  className={navigationMenuTriggerStyle()}>
-            <Link href="/#">Studio</Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="/#" />}>
+            Studio
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:block">
@@ -96,19 +96,19 @@ function NavigationMenuBar() {
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
               <li>
-                <NavigationMenuLink >
-                  <Link href="#">Game 1</Link>
+                <NavigationMenuLink render={<Link href="#" />}>
+                  Game 1
                 </NavigationMenuLink>
-                <NavigationMenuLink >
-                  <Link href="#">Game 2</Link>
+                <NavigationMenuLink render={<Link href="#" />}>
+                  Game 2
                 </NavigationMenuLink>
               </li>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink  className={navigationMenuTriggerStyle()}>
-            <Link href="#">Forum</Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} render={<Link href="#" />}>
+            Forum
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:block">
@@ -116,14 +116,14 @@ function NavigationMenuBar() {
           <NavigationMenuContent>
             <ul className="grid w-[200px] gap-4">
               <li>
-                <NavigationMenuLink >
-                  <Link href="#">Current Vacancies</Link>
+                <NavigationMenuLink render={<Link href="#" />}>
+                  Current Vacancies
                 </NavigationMenuLink>
-                <NavigationMenuLink >
-                  <Link href="#">Graduates</Link>
+                <NavigationMenuLink render={<Link href="#" />}>
+                  Graduates
                 </NavigationMenuLink>
-                <NavigationMenuLink >
-                  <Link href="#">Interns</Link>
+                <NavigationMenuLink render={<Link href="#" />}>
+                  Interns
                 </NavigationMenuLink>
               </li>
             </ul>
